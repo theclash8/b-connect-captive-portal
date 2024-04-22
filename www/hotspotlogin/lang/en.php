@@ -6,8 +6,10 @@
 
 $ChilliSpot="Enginx hotspot";
 $title="$ChilliSpot Login";
-$centerUsername="Username";
 $centerPassword="Password";
+$centerName="Enter Name";
+$centerSurname="Enter Surname";
+$centerEmail="Enter your email";
 $centerLogin="Login";
 $centerPleasewait="Please wait.......";
 $centerLogout="Logout";
@@ -19,6 +21,5 @@ $h1Loggingin="Logging in to $ChilliSpot";
 $h1Loggedout="Logged out from $ChilliSpot";
 $centerdaemon="Login must be performed through $ChilliSpot server";
 $centerencrypted="Login must use encrypted connection";
-
 
 ?>

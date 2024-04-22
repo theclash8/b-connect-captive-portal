@@ -36,10 +36,9 @@ echo "
             <h3 class='form-signin-heading'>Welcome!</h3>
             <hr class='colorgraph'><br>
               
-            <input type='text' class='form-control' name='Name' placeholder='$centerName' required='' autofocus='' />
-            <input type='text' class='form-control' name='Surame' placeholder='$centerSurname' required='' autofocus='' />
-            <input type='text' class='form-control' name='Email' placeholder='$centerEmail' required='' autofocus='' />
-            <input type='password' class='form-control' name='Password' placeholder='$centerPassword' required=''/>
+            <input type='text' class='form-control' name='name' placeholder='Name' required='' autofocus='' />
+            <input type='text' class='form-control' name='surname' placeholder='Surname' required='' autofocus='' />
+            <input type='text' class='form-control' name='email' placeholder='Email' required='' autofocus='' />
             <input type='hidden' name='button' value='Login'>
             <button class='btn btn-lg btn-primary btn-block' onClick=\'javascript:popUp('$loginpath?res=popup1&uamip=$uamip&uamport=$uamport')\'>Login</button>
         </form>         

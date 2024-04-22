@@ -1,5 +1,5 @@
 ###########################################################################
-# $Id$                 #
+# $Id$                                                                    #
 #                                                                         #
 #  schema.sql                       rlm_sql - FreeRADIUS SQL Module       #
 #                                                                         #
@@ -165,13 +165,13 @@ CREATE TABLE nas (
 #
 CREATE TABLE users (
   id int(10) NOT NULL auto_increment,
-  name varchar(128) NOT NULL,
-  surtname varchar(32),
-  email varchar(32),
+  email_address varchar(32),
+  age tinyint,
+  gender tinyint,
   PRIMARY KEY (id),
-  KEY nasname (name)
+  KEY email_address (email_address)
 );
 
 LOCK TABLES `radcheck` WRITE;
-INSERT INTO `radcheck` VALUES (1,'testing','Cleartext-Password',':=','password');
+INSERT INTO `radcheck` VALUES (1,'default-username','Cleartext-Password',':=','default-password');
 UNLOCK TABLES;

@@ -152,6 +152,27 @@ $redirurldecode = $redirurl;
 
 # If attempt to login
 if ($button == 'Login') {
+
+          $mysql_servername = 'mysql';
+        $mysql_username = getenv('MYSQL_USER');
+        $mysql_password = getenv('MYSQL_PASSWORD');
+        $mysql_dbname = getenv('MYSQL_DATABASE');
+
+        // Create connection
+        $conn = new mysqli($mysql_servername, $mysql_username, $mysql_password, $mysql_dbname);
+        // Check connection
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "INSERT INTO `users` (gender, age, email_address) VALUES ('" . mysqli_real_escape_string($conn, $_POST['name']) . "', '" . mysqli_real_escape_string($conn, $_POST['surname']) . "', '" . mysqli_real_escape_string($conn, $_POST['email']) . "');";
+
+        if ($conn->query($sql) === TRUE) {
+        } else {
+          exit;
+        }
+
+
   $hexchal = pack ("H32", $challenge);
   if ($uamsecret) {
     $newchal = pack ("H*", md5($hexchal . $uamsecret));
@@ -240,10 +261,10 @@ switch($res) {
 /* Otherwise it was not a form request
  * Send out an error message
  */
-if ($result == 0) {
-	include('template/'.$template.'/hotspotlogin-nonchilli.php');
-	exit(0);
-}
+//if ($result == 0) {
+	//include('template/'.$template.'/hotspotlogin-nonchilli.php');
+	//exit(0);
+//}
 
 # Generate the output
 #echo "Content-type: text/html\n\n";
@@ -295,6 +316,7 @@ if ($result == 2 || $result == 5) {
 }
 
 if ($result == 1) {
+
     include('template/'.$template.'/login-successful.php');
 }
 
@@ -304,7 +326,8 @@ if (($result == 4) || ($result == 12)) {
 
 
 if ($result == 11) {
-        include('template/'.$template.'/loggingin-popup.php');
+
+    include('template/'.$template.'/loggingin-popup.php');
 }
 
 
