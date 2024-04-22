@@ -6,8 +6,6 @@
 <div class='jumbotron'>
   <p class='lead'>Please wait while Hotspot system authenticates your <br/>
             user credentials against our servers.</p>
-  <hr class='my-4'>
-  <p>This may take up to 30 seconds approximately.</p>
   
 </div>
 
