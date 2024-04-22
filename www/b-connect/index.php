@@ -65,7 +65,6 @@ if ($button == 'Login') {
   </html>
 
 <?php 
-  exit;
 }
 
 switch($res) {
@@ -77,7 +76,7 @@ switch($res) {
 }
 
   if ($result == 11) {
-    include('template/loggingin-popup.php');
+    include('template/loggingin.php');
   }
 
 ?>
