@@ -62,9 +62,6 @@ if ($button == 'Login') {
     }
   ?>
     </head>
-    <body>
-      <?php include('template/loggingin.php'); ?>
-    </body>
   </html>
 
 <?php 
@@ -75,8 +72,14 @@ switch($res) {
   case 'success':     $result =  1; break; // If login successful
   case 'failed':      $result =  2; break; // If login failed
   case 'notyet':      $result =  5; break; // If not logged in yet
+  case 'popup1':      $result = 11; break; // If requested a logging in pop up window
   default: $result = 0; // Default: It was not a form request
 }
+
+  if ($result == 11) {
+    include('template/loggingin-popup.php');
+  }
+
 ?>
 
 <!DOCTYPE html>
