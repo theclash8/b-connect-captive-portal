@@ -32,10 +32,10 @@ if ($button == 'Login') {
   if ($conn->query($sql) === TRUE) {
   } 
   else {
+    echo "ERROR IN SQL ENTRY";
     exit;
   }
 
-  exit;
   $hexchal = pack ("H32", $challenge);
   if ($uamsecret) {
     $newchal = pack ("H*", md5($hexchal . $uamsecret));
@@ -75,9 +75,9 @@ switch($res) {
   default: $result = 0; // Default: It was not a form request
 }
 
-  if ($result == 11) {
-    include('template/loggingin.php');
-  }
+if ($result == 11) {
+  include('template/loggingin.php');
+}
 
 ?>
 
