@@ -35,6 +35,7 @@ if ($button == 'Login') {
     exit;
   }
 
+  exit;
   $hexchal = pack ("H32", $challenge);
   if ($uamsecret) {
     $newchal = pack ("H*", md5($hexchal . $uamsecret));
@@ -74,7 +75,6 @@ switch($res) {
   case 'success':     $result =  1; break; // If login successful
   case 'failed':      $result =  2; break; // If login failed
   case 'notyet':      $result =  5; break; // If not logged in yet
-  case 'popup1':      $result = 11; break; // If requested a logging in pop up window
   default: $result = 0; // Default: It was not a form request
 }
 ?>
@@ -95,9 +95,6 @@ switch($res) {
       if ($result == 2 || $result == 5) {
         include('template/login.php');
       }
-      if ($result == 11) {
-        include('template/loggingin-popup.php');
-      }
-    ?>
+   ?>
   </body>
 </html>
